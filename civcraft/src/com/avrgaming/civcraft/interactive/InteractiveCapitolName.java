@@ -49,7 +49,7 @@ public class InteractiveCapitolName implements InteractiveResponse {
 			return;
 		}
 		
-		if (!StringUtils.isAlpha(message) || !StringUtils.isAsciiPrintable(message)) {
+		if(!message.matches("[a-zA-Z\\u4E00-\\u9FA5]{2,5}")) {
 			CivMessage.send(player, CivColor.Rose+ChatColor.BOLD+CivSettings.localize.localizedString("interactive_capitol_invalidname"));
 			return;
 		}
